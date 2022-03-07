@@ -18,7 +18,7 @@ top_rexp = top_rexp.reset_index()
 total_exp = top_rexp["total_value"].sum()
 top_rexp["porcentaje"] = ((top_rexp["total_value"]/total_exp).round(decimals=3))*100
 print("\n10 Rutas con la mayor cantidad de exportaciones:\n")
-print(top_rexp[["origin","destination","porcentaje"]])
+print(top_rexp[["origin","destination","transport_mode","porcentaje"]])
 
 sns.catplot(data=top_rexp, kind="bar", x="destination", y="porcentaje", palette='Pastel2_r', alpha=.6, height=7)
 
@@ -33,7 +33,7 @@ top_rimp = top_rimp.reset_index()
 total_imp = top_rimp["total_value"].sum()
 top_rimp["porcentaje"] = ((top_rimp["total_value"]/total_imp).round(decimals=3))*100
 print("\n10 Rutas con la mayor cantidad de importaciones:\n")
-print(top_rimp[["origin","destination","porcentaje"]])
+print(top_rimp[["origin","destination","transport_mode","porcentaje"]])
 
 sns.catplot(data=top_rimp, kind="bar", x="origin", y="porcentaje", palette='Pastel2_r', alpha=.6, height=9)
 
